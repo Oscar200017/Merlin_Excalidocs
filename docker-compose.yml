@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: merlin_db
+      POSTGRES_USER: merlin_user
+      POSTGRES_PASSWORD: merlin_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - merlin_pgdata:/var/lib/postgresql/data
+
+volumes:
+  merlin_pgdata:
